@@ -23,10 +23,19 @@ public class LevelGenerator : MonoBehaviour
     Vector2Int minMaxCollectibleFrequency = new Vector2Int(5, 10);
 
     [SerializeField]
+    Vector2Int minMaxObstacleFrequency = new Vector2Int(5, 10);
+
+    [SerializeField]
     GameObject[] collectibleObjects;
 
     [SerializeField]
+    GameObject[] obstacleObjects;
+
+    [SerializeField]
     int nextCollectibleIn = 1;
+
+    [SerializeField]
+    int nextObstacleIn = 1;
 
     private float tempCounter = 0;
 
@@ -54,8 +63,6 @@ public class LevelGenerator : MonoBehaviour
     public void RegenerateLastTile() {
         RegenerateTile(tiles[lastTileIndex]);
         lastTileIndex = (lastTileIndex + 1) % tileCount;
-
-        nextCollectibleIn--;
     }
 
     void RegenerateTile(LevelTile tile) {
@@ -67,7 +74,7 @@ public class LevelGenerator : MonoBehaviour
         
         tile.tileObject = tileObject;
 
-        if (nextCollectibleIn <= 0) {
+        if (nextCollectibleIn <= 0 && collectibleObjects.Count() > 0) {
             GameObject collectible = Instantiate(collectibleObjects[rng.NextInt(collectibleObjects.Count())], tileObject.transform);
             collectible.transform.localPosition = Vector3.zero;
             tile.containedObjects.Add(collectible);
@@ -75,6 +82,18 @@ public class LevelGenerator : MonoBehaviour
         }
         else {
             nextCollectibleIn--;
+        }
+
+        if (nextObstacleIn <= 0 && obstacleObjects.Count() > 0)
+        {
+            GameObject obstacle = Instantiate(obstacleObjects[rng.NextInt(obstacleObjects.Count())], tileObject.transform);
+            obstacle.transform.localPosition = Vector3.zero;
+            tile.containedObjects.Add(obstacle);
+            nextObstacleIn = rng.NextInt(minMaxObstacleFrequency.x, minMaxObstacleFrequency.y + 1);
+        }
+        else
+        {
+            nextObstacleIn--;
         }
 
         currentTilePos += tileOffset;
