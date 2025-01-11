@@ -25,7 +25,7 @@ public class Flashlight : MonoBehaviour
         else
         {
             hit = new RaycastHit();
-            targetPoint = ray.origin + ray.direction;
+            targetPoint = transform.position + ray.direction;
         }
 
         Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);

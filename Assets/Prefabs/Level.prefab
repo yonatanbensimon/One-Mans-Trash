@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileCount: 20
   tilePrefab: {fileID: 4796052506580694999, guid: a3d29313fd759ba428fa4e2c1507ebb2, type: 3}
-  tileOffset: {x: 0, y: 0, z: 10}
+  tileOffset: {x: 0, y: 0, z: 40}
   minMaxCollectibleFrequency: {x: 3, y: 6}
   collectibleObjects:
-  - {fileID: 8881692905683794767, guid: 704197e43000db447a9da78a98a3c2ef, type: 3}
+  - {fileID: 4000140398656196938, guid: 08ccf52ec160bf048bf0742276f8d1f9, type: 3}
   nextCollectibleIn: 1
