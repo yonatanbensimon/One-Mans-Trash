@@ -1,5 +1,7 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -19,15 +21,19 @@ public class LevelGenerator : MonoBehaviour
     private int lastTileIndex = 0;
 
     [SerializeField]
-    Vector2Int minMaxCollectibleFrequency = new Vector2Int(5, 10);
+    private Vector2Int minMaxCollectibleFrequency = new Vector2Int(5, 10);
 
     [SerializeField]
-    GameObject[] collectibleObjects;
+    private GameObject[] collectibleObjects;
 
     [SerializeField]
-    int nextCollectibleIn = 1;
+    private int nextCollectibleIn = 1;
 
-    private float tempCounter = 0;
+    [SerializeField]
+    private GameObject regenerateBehindObject;
+
+    [SerializeField]
+    private float regenerationDistance;
 
     void Start()
     {
@@ -66,5 +72,16 @@ public class LevelGenerator : MonoBehaviour
         }
 
         currentTilePos += tileOffset;
+    }
+
+    void FixedUpdate() {
+        LevelTile lastTile = tiles[lastTileIndex];
+        Transform unloaderTransform = regenerateBehindObject.transform;
+        Transform tileTransform = lastTile.tileObject.transform;
+        if (Vector3.Dot(tileTransform.position - unloaderTransform.position, unloaderTransform.forward) < 0
+            && Vector3.Distance(tileTransform.position, unloaderTransform.position) > regenerationDistance) 
+        {
+            RegenerateLastTile();
+        }
     }
 }

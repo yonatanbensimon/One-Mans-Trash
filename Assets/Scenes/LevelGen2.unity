@@ -131,14 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
-      propertyPath: regenerationDistance
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
-      propertyPath: regenerateBehindObject
-      value: 
-      objectReference: {fileID: 341585332}
     - target: {fileID: 7075637988121068994, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -530,10 +522,6 @@ PrefabInstance:
     - target: {fileID: 4980494554229613673, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: deceleration
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4980494554229613673, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
-      propertyPath: speedRange.x
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4980494554229613673, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: speedRange.y
