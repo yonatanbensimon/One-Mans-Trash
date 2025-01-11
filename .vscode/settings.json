@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Florida-Johnson.sln"
+    "dotnet.defaultSolution": "Florida-Johnson.sln",
+    "FSharp.suggestGitignore": false
 }
