@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public struct LevelTile
+public class LevelTile
 {
-    public GameObject gameObject;
+    public GameObject tileObject;
     
+    public List<GameObject> containedObjects = new List<GameObject>();
 }
