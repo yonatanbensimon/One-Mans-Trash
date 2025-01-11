@@ -9,6 +9,7 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private float rotationSpeed = 20f;
     [SerializeField] private Runner runner;
     [SerializeField] private float pointSpeedRatio = 0.1f;
+    [SerializeField] private GameObject solidLight;
     
     private RaycastHit hit;
 
@@ -30,6 +31,10 @@ public class Flashlight : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        Quaternion solidLightRotation = Quaternion.LookRotation(ray.direction);
+        solidLightRotation *= Quaternion.Euler(-90, 0, 0);
+        solidLight.transform.rotation = solidLightRotation;
     }
     
     void OnAttack(InputValue value)
