@@ -21,10 +21,8 @@ public class PlayerController : MonoBehaviour
         //We want our character to be in the middle of the second lane when starting the game
         currentLane = 1; //Lanes are 0-indexed
         lineWidth = sizeOfPlane / numOfLanes;
-        float initialPos = (lineWidth * currentLane) + (lineWidth / 2);
 
-        transform.position = new Vector3(initialPos, transform.position.y, transform.position.z); //This exclusively changes the x-coord
-        newPos = transform.position;
+        UpdateLane();
     }
 
     void OnMoveLeft()
