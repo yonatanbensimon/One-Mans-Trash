@@ -4,6 +4,8 @@ public class Boulder : MonoBehaviour
 {
     private Rigidbody rb;
     private Runner runner;
+    private GameManager gameManager;
+
     private float boulderSpeed;
     private float runnerSpeed;
 
@@ -18,6 +20,9 @@ public class Boulder : MonoBehaviour
         GameObject runnerObj = GameObject.FindWithTag("Player");
         runner = runnerObj.GetComponent<Runner>();
         boulderSpeed = baseSpeed;
+
+        GameObject gameManagerObj = GameObject.FindWithTag("GameController");
+        gameManager = gameManagerObj.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class Boulder : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Runner runner))
         {
-            print("Player");
+            gameManager.EndGame();
         }
     }
 
