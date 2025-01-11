@@ -24,4 +24,15 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("EndScene");
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
+    public void MainMenu()
+    {
+        //Once MainMenu is implemented
+        print("Main Menu");
+    }
 }
