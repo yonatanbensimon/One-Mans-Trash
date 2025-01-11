@@ -32,6 +32,11 @@ public class Runner : MonoBehaviour
         }
     }
 
+    public float maxSpeed
+    {
+        get => speedRange.y;
+    }
+
     private void Start()
     {
         speed = baseSpeed;
