@@ -41,7 +41,6 @@ public class Runner : MonoBehaviour
     {
         speed = baseSpeed;
         rb = GetComponent<Rigidbody>();
-        rb.linearVelocity = Vector3.forward;
 
         //We want our character to be in the middle of the second lane when starting the game
         currentLane = 1; //Lanes are 0-indexed
