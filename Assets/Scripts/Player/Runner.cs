@@ -15,7 +15,6 @@ public class Runner : MonoBehaviour
         set
         {
             speed = Math.Min(Math.Max(speedRange.x, value), speedRange.y);
-            rb.linearVelocity = speed * Vector3.forward;
         }
     }
 
@@ -29,5 +28,6 @@ public class Runner : MonoBehaviour
     private void FixedUpdate()
     {
         Speed -= deceleration * Time.deltaTime;
+        rb.MovePosition(transform.position + transform.forward * (speed * Time.fixedDeltaTime));
     }
 }
