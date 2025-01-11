@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeOfPlane: 10
   numOfLanes: 3
+  speed: 7
 --- !u!114 &1185782094
 MonoBehaviour:
   m_ObjectHideFlags: 0
