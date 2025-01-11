@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -29,13 +30,24 @@ public class LevelGenerator : MonoBehaviour
 
     private float tempCounter = 0;
 
+    Runner runner;
+
     void Start()
     {
+        runner = FindAnyObjectByType<Runner>();
         rng.InitState();
         tiles = new LevelTile[tileCount];
         for (int i = 0; i < tileCount; i++) {
             tiles[i] = new LevelTile();
             RegenerateTile(tiles[i]);
+        }
+    }
+
+    private void Update()
+    {
+        if (runner != null && Vector3.Distance(runner.transform.position, currentTilePos) < 2.0f * tileOffset.magnitude)
+        {
+            RegenerateLastTile();
         }
     }
 
