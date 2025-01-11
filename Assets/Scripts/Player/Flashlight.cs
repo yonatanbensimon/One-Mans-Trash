@@ -7,6 +7,8 @@ public class Flashlight : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float rotationSpeed = 20f;
+    [SerializeField] private Runner runner;
+    [SerializeField] private float pointSpeedRatio = 0.1f;
     
     private RaycastHit hit;
 
@@ -38,7 +40,8 @@ public class Flashlight : MonoBehaviour
             if (collectable != null)
             {
                 int points = collectable.Points;
-                Debug.Log(points);
+                runner.Speed += points * pointSpeedRatio;
+                hit.transform.gameObject.SetActive(false);
             }
         }
     }
