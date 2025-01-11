@@ -159,7 +159,7 @@ MonoBehaviour:
   deceleration: 1
   sizeOfPlane: 10
   numOfLanes: 3
-  speedOfX: 7
+  speedOfX: 25
   posRightPlane: -5
 --- !u!114 &1929463208604815570
 MonoBehaviour:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Runner
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &5401311348391786667

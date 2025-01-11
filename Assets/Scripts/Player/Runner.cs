@@ -87,7 +87,7 @@ public class Runner : MonoBehaviour
 
         while (Vector3.Distance(transform.position, newPos) > 0.01f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, newPos, speedOfX * Time.deltaTime);
             yield return null;
         }
 
