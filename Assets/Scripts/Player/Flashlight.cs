@@ -18,7 +18,7 @@ public class Flashlight : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && hit.transform != runner.transform)
         {
             targetPoint = hit.point;
         }
