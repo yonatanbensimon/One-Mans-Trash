@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Continue()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
     public int Points
     {
         get => _points;
