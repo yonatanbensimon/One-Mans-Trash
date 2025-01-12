@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147, y: 141}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -2.0604, y: 67.575}
+  m_SizeDelta: {x: 756.0298, y: 222.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395954491
 MonoBehaviour:
@@ -312,12 +312,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are a daring adventurer, stepping into the rugged boots of Florida
-    Johnson. As you dash through the shadowy halls of an ancient temple, the air
-    thick with mystery, whispers of legendary treasures beckon you forward. But heed
-    this, player: the temple''s secrets are not what they seem, and the line between
-    what is lost and what is found blurs with every step. Are you ready to uncover
-    the truth and redefine what treasure truly means? Your journey begins now!'
+  m_text: "Hey there explorers! \nI'm Florida Johnson, archaeologist extraordinaire.
+    You may be wondering how I got myself into this mess. The answer: I am exactly
+    where I want to be.\nI've long dreamt of dashing through the shadowy halls of
+    the ancient temple of Los Tan Fa'Un, the air thick with mystery, whispers of
+    legendary treasures beckoning me forward. What I didn't count on was a partner,
+    but hey, extra hands can't hurt, right? But heed this, player: the temple's secrets
+    are not what they seem, and the line between what is lost and what is found blurs
+    with every step. Are you ready to uncover the truth and redefine what treasure
+    truly means? Your journey begins now!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
   m_sharedMaterial: {fileID: 1482817029282300463, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
@@ -382,7 +385,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -362.75134, w: 0}
+  m_margin: {x: 1.0454788, y: 0, z: 0.09434511, w: -1.0456219}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -430,8 +433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -248, y: 183}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.0000010334, y: 122.46}
+  m_SizeDelta: {x: 800, y: 70.9134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406541361
 MonoBehaviour:
@@ -456,7 +459,7 @@ MonoBehaviour:
   m_text: 'Use A/D or the right/left arrows  to navigate through the temple
 
     Use
-    the Flashlight to find lost treasures and left click to collect them'
+    the Flashlight to find lost treasures and left click to collect them.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
   m_sharedMaterial: {fileID: 1482817029282300463, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
@@ -490,7 +493,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -521,7 +524,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -518.15015, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.50041205, w: 1.0456867}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -972,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -35, y: 92}
+  m_AnchoredPosition: {x: -41, y: 62}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303666628

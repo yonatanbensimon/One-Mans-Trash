@@ -133,12 +133,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: collectibleObjects.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: de70ca2833e40ec40877fac73a52c28c, type: 3}
     - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: 'collectibleObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 8881692905683794767, guid: 704197e43000db447a9da78a98a3c2ef, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: 69e4120637d273f488de6bddb9366958, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: 3f2e3f600c9298941a5ff1b2d118c933, type: 3}
     - target: {fileID: 7075637988121068994, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

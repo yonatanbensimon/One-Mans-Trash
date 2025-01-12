@@ -21,6 +21,7 @@ public class ScoreVisualizer : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.OnScoreUpdated += UpdateScore;
+        UpdateScore(GameManager.instance.Points);
     }
 
     private void OnDisable()
