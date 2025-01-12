@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     private int _points;
 
+    private bool paragraphViewed = false;
+
     public event Action<int> OnScoreUpdated;
 
     private void Awake()
@@ -61,6 +63,18 @@ public class GameManager : MonoBehaviour
     public void Continue()
     {
         SceneManager.LoadScene("MainLevel");
+    }
+
+    public void StartGame()
+    {
+        if (!paragraphViewed)
+        {
+            SceneManager.LoadScene("IntroParagraph");
+            paragraphViewed = true;
+        } else
+        {
+            SceneManager.LoadScene("MainLevel");
+        }
     }
 
     public int Points

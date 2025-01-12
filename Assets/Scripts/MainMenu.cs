@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 // Load Scene
 public class MainMenu : MonoBehaviour
 {
+
+    private PauseMenu pm;
+    private GameManager gameManager;
+
+    public void Start()
+    {
+        pm = FindAnyObjectByType<PauseMenu>();
+        gameManager = GameManager.instance;
+
+    }
     // Load Scene
     public void Play() {
-        SceneManager.LoadScene("MainLevel");
+        gameManager.StartGame();
     }
 
     // Quit Game
