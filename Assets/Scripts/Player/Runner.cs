@@ -6,6 +6,8 @@ using System.Collections;
 public class Runner : MonoBehaviour
 {
     private Rigidbody rb;
+    private PauseMenu pm;
+
     [SerializeField] float baseSpeed = 1.0f;
     private float speed = 1.0f;
     [SerializeField] private Vector2 speedRange = new Vector2(0.5f, 2.0f);
@@ -45,6 +47,8 @@ public class Runner : MonoBehaviour
         //We want our character to be in the middle of the second lane when starting the game
         currentLane = 1; //Lanes are 0-indexed
         lineWidth = sizeOfPlane / numOfLanes;
+
+        pm = PauseMenu.instance;
 
         UpdateLane();
     }
@@ -97,5 +101,16 @@ public class Runner : MonoBehaviour
 
         transform.position = newPos;
         isMoving = false;
+    }
+
+    void OnPause()
+    {
+        if (pm.Paused)
+        {
+            pm.Resume();
+        } else
+        {
+            pm.Pause();
+        }
     }
 }
