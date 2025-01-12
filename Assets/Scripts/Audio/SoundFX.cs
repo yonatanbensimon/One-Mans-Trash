@@ -5,6 +5,8 @@ public class SoundFX : MonoBehaviour
     [SerializeField] private AudioSource obstacles;
     [SerializeField] private AudioSource collectibles;
     [SerializeField] public AudioSource death;
+    [SerializeField] private AudioClip cursedObject;
+    [SerializeField] private AudioClip goodObject;
 
     Runner runner;
 
@@ -17,6 +19,8 @@ public class SoundFX : MonoBehaviour
             runner.OnCollectTreasure += OnCollectTreasure;
             runner.OnDeath += OnDeath;
         }
+
+        goodObject = collectibles.clip;
     }
 
     private void OnDisable()
@@ -37,11 +41,11 @@ public class SoundFX : MonoBehaviour
         }
     }
 
-    private void OnCollectTreasure()
+    private void OnCollectTreasure(bool good)
     {
         if (collectibles != null)
         {
-            collectibles.PlayOneShot(collectibles.clip);
+            collectibles.PlayOneShot(good ? goodObject : cursedObject);
         }
     }
 

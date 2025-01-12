@@ -41,8 +41,8 @@ public class Flashlight : MonoBehaviour
             if (collectable != null)
             {
                 collectable.OnCollection();
-                runner.CollectTreasureEvent();
                 int points = collectable.Points;
+                runner.CollectTreasureEvent(points > 0);
                 GameManager.instance.Points += points;
                 runner.AddSpeedUpCoroutine(StartCoroutine(increaseSpeed(points * pointSpeedRatio, 5f)));
                 hit.transform.gameObject.SetActive(false);
