@@ -26,14 +26,14 @@ public class BoulderSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        offset.x += boulder.boulderSpeed * scrollSpeed * Time.deltaTime;
+        offset.x += boulder.BoulderSpeed * scrollSpeed * Time.deltaTime;
         mat.SetTextureOffset("_MainTex", offset);
-        playerImage.rectTransform.localPosition = Vector2.MoveTowards(playerImage.rectTransform.localPosition, targetPos, boulder.boulderSpeed * smoothingFactor * Time.deltaTime);
+        playerImage.rectTransform.localPosition = Vector2.MoveTowards(playerImage.rectTransform.localPosition, targetPos, boulder.BoulderSpeed * smoothingFactor * Time.deltaTime);
     }
 
     public void ChangePlayerOffset(float offset)
     {
-        offset = Mathf.Clamp(offset, -50f, 50f);
+        offset = Mathf.Clamp(offset, -100f, 100f);
         targetPos = new Vector2(offset, playerImage.rectTransform.localPosition.y);
     }
 }

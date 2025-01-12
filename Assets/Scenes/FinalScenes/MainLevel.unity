@@ -871,6 +871,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1259890075}
     m_Modifications:
+    - target: {fileID: 488876750384070183, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822059745540859440, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 4022362508192071366, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_Name
       value: Slider
@@ -901,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4765648673692837746, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4765648673692837746, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_SizeDelta.y

@@ -7,8 +7,13 @@ public class Boulder : MonoBehaviour
     private Runner runner;
     private GameManager gameManager;
 
-    public float boulderSpeed;
-    private float runnerSpeed;
+    private float boulderSpeed;
+
+    public float BoulderSpeed
+    {
+        get => boulderSpeed;
+        private set => boulderSpeed = value;
+    }
 
     [SerializeField] private float baseSpeed = 25;
     [SerializeField] private float difficultyLevel = 1f;

@@ -73,7 +73,7 @@ public class Runner : MonoBehaviour
     {
         Speed -= deceleration * Time.fixedDeltaTime;
         rb.MovePosition(transform.position + transform.forward * (speed * Time.fixedDeltaTime));
-        float playerPos = -50f + 100f * Vector3.Distance(transform.position, boulder.transform.position) / clampDistanceBetweenBoulderAndPlayer;
+        float playerPos = -100f + 200f * Vector3.Distance(transform.position, boulder.transform.position) / clampDistanceBetweenBoulderAndPlayer;
         speedSlider.ChangePlayerOffset(playerPos);
     }
 
