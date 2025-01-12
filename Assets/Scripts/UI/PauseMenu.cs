@@ -5,11 +5,12 @@ public class PauseMenu : MonoBehaviour
     private GameManager gameManager;
     public static bool isGamePaused = false;
     public GameObject gameMenu;
-
+    public AudioSource audioSource;
     
     void Start()
     {
         gameManager = GameManager.instance;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public bool Paused
@@ -22,6 +23,10 @@ public class PauseMenu : MonoBehaviour
         gameMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
     }
 
     public void Pause()
@@ -29,6 +34,10 @@ public class PauseMenu : MonoBehaviour
         gameMenu.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
     }
 
     public void MainMenu()

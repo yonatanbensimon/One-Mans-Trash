@@ -31,6 +31,9 @@ public class Runner : MonoBehaviour
     private bool isMoving = false;
 
     public event Action<float> OnSpeedChanged;
+    public event Action OnCollectTreasure;
+    public event Action OnHitObstacle;
+    public event Action OnDeath;
 
     private List<Coroutine> speedUpCoroutines;
 
@@ -144,5 +147,20 @@ public class Runner : MonoBehaviour
             }
         }
         speedUpCoroutines.Clear();
+    }
+
+    public void HitObstacleEvent()
+    {
+        OnHitObstacle?.Invoke();
+    }
+
+    public void CollectTreasureEvent()
+    {
+        OnCollectTreasure?.Invoke();
+    }
+
+    public void DieEvent()
+    {
+        OnDeath?.Invoke();
     }
 }

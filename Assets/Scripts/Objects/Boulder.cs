@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Boulder : MonoBehaviour
@@ -34,8 +35,15 @@ public class Boulder : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Runner runner))
         {
-            gameManager.EndGame();
+            StartCoroutine(DeathCoroutine());
         }
     }
 
+    private IEnumerator DeathCoroutine()
+    {
+        runner.DieEvent();
+        var sfx = FindAnyObjectByType<SoundFX>();
+        yield return new WaitForSeconds(sfx.death.clip.length);
+        gameManager.EndGame();
+    }
 }
