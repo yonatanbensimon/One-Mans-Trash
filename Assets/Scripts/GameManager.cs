@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("EndScene");
     }
-
-<<<<<<< Updated upstream
     public void Restart()
     {
         SceneManager.LoadScene("MainLevel");
@@ -40,11 +38,11 @@ public class GameManager : MonoBehaviour
     {
         //Once MainMenu is implemented
         print("Main Menu");
-=======
+    }
+
     public int Points
     {
         get;
         set;
->>>>>>> Stashed changes
     }
 }
