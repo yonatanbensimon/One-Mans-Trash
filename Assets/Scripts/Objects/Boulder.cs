@@ -28,12 +28,13 @@ public class Boulder : MonoBehaviour
         boulderSpeed = baseSpeed;
 
         gameManager = GameManager.instance;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     { 
-        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), 0.9f * runner.maxSpeed);
+        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), 0.80f * runner.maxSpeed + 0.10f * runner.Speed);
         rb.MovePosition(transform.position + transform.forward * boulderSpeed * Time.fixedDeltaTime);
         if (Camera.main.TryGetComponent(out CameraShake cs))
         {
@@ -46,6 +47,7 @@ public class Boulder : MonoBehaviour
                 cs.StopAllShake();
             }
         }
+        rb.angularVelocity = Mathf.Max(boulderSpeed, 5f) * Vector3.forward;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -59,12 +61,7 @@ public class Boulder : MonoBehaviour
     private IEnumerator DeathCoroutine()
     {
         runner.DieEvent();
-        var sfx = FindAnyObjectByType<SoundFX>();
-        float lag = 0;
-        if (sfx != null && sfx.death != null && sfx.death.clip != null) 
-        {
-            lag = sfx.death.clip.length;
-        }
+        float lag = 1f;
         yield return new WaitForSeconds(lag);
         gameManager.EndGame();
     }

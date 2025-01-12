@@ -35,6 +35,8 @@ public class Runner : MonoBehaviour
     public event Action OnHitObstacle;
     public event Action OnDeath;
 
+    [SerializeField] MeshRenderer meshRenderer;
+
     private List<Coroutine> speedUpCoroutines;
 
     public float Speed
@@ -56,8 +58,12 @@ public class Runner : MonoBehaviour
     {
         speed = baseSpeed;
         rb = GetComponent<Rigidbody>();
+        if (meshRenderer == null)
+        {
+            meshRenderer = GetComponentInChildren<MeshRenderer>();
+        }
 
-        //We want our character to be in the middle of the second lane when starting the game
+        // We want our character to be in the middle of the second lane when starting the game
         currentLane = 1; //Lanes are 0-indexed
         lineWidth = sizeOfPlane / numOfLanes;
 
@@ -161,6 +167,7 @@ public class Runner : MonoBehaviour
 
     public void DieEvent()
     {
+        meshRenderer.enabled = false;
         OnDeath?.Invoke();
     }
 }

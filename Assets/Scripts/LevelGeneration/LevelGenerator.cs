@@ -88,12 +88,12 @@ public class LevelGenerator : MonoBehaviour
             if (Random.value <= oddsOfGoodItem)
             {
                 collectible = Instantiate(collectibleObjects[rng.NextInt(collectibleObjects.Count())], tileObject.transform);
-                oddsOfGoodItem -= 0.2f;
+                oddsOfGoodItem -= 0.4f;
             }
             else
             {
                 collectible = Instantiate(cursedObjects[rng.NextInt(cursedObjects.Count())], tileObject.transform);
-                oddsOfGoodItem += 0.2f;
+                oddsOfGoodItem += 0.4f;
             }
             tile.containedObjects.Add(collectible);
             nextCollectibleIn = rng.NextInt(minMaxCollectibleFrequency.x, minMaxCollectibleFrequency.y + 1);

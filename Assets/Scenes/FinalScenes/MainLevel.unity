@@ -131,6 +131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxObstacleFrequency.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxObstacleFrequency.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxCollectibleFrequency.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075637988121068994, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -739,15 +751,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488876750384070183, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.099999994
       objectReference: {fileID: 0}
     - target: {fileID: 488876750384070183, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6600001
+      value: 0.20000002
       objectReference: {fileID: 0}
     - target: {fileID: 488876750384070183, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6600001
+      value: 0.20000002
       objectReference: {fileID: 0}
     - target: {fileID: 488876750384070183, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -755,15 +767,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822059745540859440, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1822059745540859440, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.20000002
+      value: 0.6600001
       objectReference: {fileID: 0}
     - target: {fileID: 1822059745540859440, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.20000002
+      value: 0.6600001
       objectReference: {fileID: 0}
     - target: {fileID: 2021080493431900741, guid: ed9270240084ed845ac048bb0510fb40, type: 3}
       propertyPath: m_IsActive
@@ -1095,6 +1107,14 @@ PrefabInstance:
     - target: {fileID: 4469604857987162753, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980494554229613673, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: speedRange.y
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980494554229613673, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: clampDistanceBetweenBoulderAndPlayer
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6860401811382639245, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: obstacles
@@ -1849,12 +1869,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 314769586659896238, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 314769586659896238, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 314769586659896238, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 314769586659896238, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1891,6 +1915,26 @@ PrefabInstance:
     - target: {fileID: 354028431834179500, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
       propertyPath: m_Name
       value: Boulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341823608682553778, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 7748221920670841403, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4889041
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748221920670841403, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6721534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748221920670841403, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_Center.x
+      value: -0.092146024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748221920670841403, guid: 955af212887fdaf4d80b402e8d1ea3fd, type: 3}
+      propertyPath: m_Center.y
+      value: 0.018593946
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
