@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalScenes/MainLevel.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/YonBoulder.unity
-    guid: e0cec26eb12ba455ebf717305c4043d4
-  - enabled: 1
     path: Assets/Scenes/FinalScenes/EndScene.unity
     guid: 071ca82d4b97d424a91a4ef6ac968d5c
   - enabled: 1
