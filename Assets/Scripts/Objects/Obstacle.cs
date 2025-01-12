@@ -8,6 +8,10 @@ public class Obstacle : MonoBehaviour
     {
         if (other.TryGetComponent(out Runner runner))
         {
+            if (Camera.main.TryGetComponent(out CameraShake cs))
+            {
+                cs.TriggerShake(0.2f, 0.8f);
+            }
             runner.HitObstacleEvent();
             runner.CancelAllSpeedUps();
             runner.Speed *= slowAmount;

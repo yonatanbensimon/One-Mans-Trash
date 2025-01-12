@@ -1,21 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    public bool shake = false;
     private Vector3 originalPosition; // To store the camera's initial position
+    private List<Coroutine> infiniteShakes;
 
     void Awake()
     {
         // Save the camera's initial position
         originalPosition = transform.localPosition;
+        infiniteShakes = new List<Coroutine>();
     }
 
     public void TriggerShake(float duration = 0.5f, float magnitude = 0.2f)
     {
         // Start the shake coroutine
-        StartCoroutine(Shake(duration, magnitude));
+        var cr = StartCoroutine(Shake(duration, magnitude));
+        if (duration >= float.PositiveInfinity)
+        {
+            infiniteShakes.Add(cr);
+        }
     }
 
     private IEnumerator Shake(float duration, float magnitude)
@@ -41,12 +47,11 @@ public class CameraShake : MonoBehaviour
         transform.localPosition = originalPosition;
     }
 
-    private void Update()
+    public void StopAllShake()
     {
-        if (shake)
+        foreach (var cr in infiniteShakes)
         {
-            shake = false;
-            TriggerShake();
+            StopCoroutine(cr);
         }
     }
 }

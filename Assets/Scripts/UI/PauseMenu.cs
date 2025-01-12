@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isGamePaused = false;
     public GameObject gameMenu;
     public AudioSource audioSource;
+    public AudioSource bgm;
     
     void Start()
     {
@@ -27,6 +28,10 @@ public class PauseMenu : MonoBehaviour
         {
             audioSource.PlayOneShot(audioSource.clip);
         }
+        if (bgm != null)
+        {
+            bgm.volume = 1f;
+        }
     }
 
     public void Pause()
@@ -37,6 +42,10 @@ public class PauseMenu : MonoBehaviour
         if (audioSource != null)
         {
             audioSource.PlayOneShot(audioSource.clip);
+        }
+        if (bgm != null)
+        {
+            bgm.volume = 0.3f;
         }
     }
 

@@ -15,6 +15,7 @@ public class SoundFX : MonoBehaviour
         {
             runner.OnHitObstacle += OnHitObstacle;
             runner.OnCollectTreasure += OnCollectTreasure;
+            runner.OnDeath += OnDeath;
         }
     }
 
@@ -24,6 +25,7 @@ public class SoundFX : MonoBehaviour
         {
             runner.OnHitObstacle -= OnHitObstacle;
             runner.OnCollectTreasure -= OnCollectTreasure;
+            runner.OnDeath -= OnDeath;
         }
     }
 
@@ -40,6 +42,14 @@ public class SoundFX : MonoBehaviour
         if (collectibles != null)
         {
             collectibles.PlayOneShot(collectibles.clip);
+        }
+    }
+
+    private void OnDeath()
+    {
+        if (death != null)
+        {
+            death.PlayOneShot(death.clip);
         }
     }
 }

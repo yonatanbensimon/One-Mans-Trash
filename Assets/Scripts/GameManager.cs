@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
     public void Continue()
     {
         SceneManager.LoadScene("MainLevel");
+        if (Camera.main.TryGetComponent(out CameraShake cs))
+        {
+            cs.TriggerShake(3f);
+        }
     }
 
     public void StartGame()
@@ -74,6 +78,10 @@ public class GameManager : MonoBehaviour
         } else
         {
             SceneManager.LoadScene("MainLevel");
+            if (Camera.main.TryGetComponent(out CameraShake cs))
+            {
+                cs.TriggerShake(3f);
+            }
         }
     }
 
