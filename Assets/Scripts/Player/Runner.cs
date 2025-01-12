@@ -19,6 +19,9 @@ public class Runner : MonoBehaviour
     [SerializeField] private int numOfLanes;
     [SerializeField] private float speedOfX;
     [SerializeField] private float posRightPlane;
+    [SerializeField] BoulderSlider speedSlider;
+    [SerializeField] Boulder boulder;
+    [SerializeField] float clampDistanceBetweenBoulderAndPlayer;
 
     private float lineWidth;
 
@@ -59,12 +62,16 @@ public class Runner : MonoBehaviour
 
         UpdateLane();
         speedUpCoroutines = new List<Coroutine>();
+        speedSlider = FindAnyObjectByType<BoulderSlider>();
+        boulder = FindAnyObjectByType<Boulder>();
     }
 
     private void FixedUpdate()
     {
         Speed -= deceleration * Time.fixedDeltaTime;
         rb.MovePosition(transform.position + transform.forward * (speed * Time.fixedDeltaTime));
+        float playerPos = -50f + 100f * Vector3.Distance(transform.position, boulder.transform.position) / clampDistanceBetweenBoulderAndPlayer;
+        speedSlider.ChangePlayerOffset(playerPos);
     }
 
     void OnMoveLeft()
