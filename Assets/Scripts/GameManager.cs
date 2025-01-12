@@ -31,10 +31,7 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(_instance);
         }
-        else if (_instance == this)
-        {
-        }
-        else
+        else if (_instance != this)
         {
             Debug.LogWarning("There should only be one GameManager");
             Destroy(this);
@@ -68,6 +65,14 @@ public class GameManager : MonoBehaviour
         {
             _points = value;
             OnScoreUpdated?.Invoke(value);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_instance == this)
+        {
+            _instance = null;
         }
     }
 }
