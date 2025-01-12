@@ -131,6 +131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 3881967072328257139, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: obstacleObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'obstacleObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5038348012190890437, guid: 27bf70eac2ff8f74a83817630b6cf791, type: 3}
     - target: {fileID: 7075637988121068994, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -357,6 +369,22 @@ PrefabInstance:
     - target: {fileID: 4469604857987162753, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520919422326183903, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520919422326183903, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520919422326183903, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520919422326183903, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8957577425132898872, guid: 0f87a2a323cdc6547941c345f7616bbb, type: 3}
       propertyPath: m_LocalPosition.x

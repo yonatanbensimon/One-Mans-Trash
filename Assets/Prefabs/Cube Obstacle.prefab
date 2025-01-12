@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2723196549775535194}
   - component: {fileID: 7058935604112788898}
   - component: {fileID: 5178070381121099086}
+  - component: {fileID: -897917128645972004}
   - component: {fileID: 7642908669323771149}
-  - component: {fileID: 8875765336855591938}
   m_Layer: 0
   m_Name: Cube Obstacle
   m_TagString: Untagged
@@ -88,6 +88,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-897917128645972004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038348012190890437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c102e7e64074f4db1dbdc399f90c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowAmount: 0.5
+  deathParticles: {fileID: 0}
 --- !u!65 &7642908669323771149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,22 +117,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8875765336855591938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038348012190890437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635673f2a36bbf6478d6f18922098a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: -1

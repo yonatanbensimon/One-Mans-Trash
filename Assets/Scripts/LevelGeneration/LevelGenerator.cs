@@ -76,9 +76,18 @@ public class LevelGenerator : MonoBehaviour
 
         if (nextCollectibleIn <= 0 && collectibleObjects.Count() > 0) {
             GameObject collectible = Instantiate(collectibleObjects[rng.NextInt(collectibleObjects.Count())], tileObject.transform);
-            collectible.transform.localPosition = Vector3.zero;
             tile.containedObjects.Add(collectible);
             nextCollectibleIn = rng.NextInt(minMaxCollectibleFrequency.x, minMaxCollectibleFrequency.y + 1);
+
+            CollectibleSpawnPoint[] spawnPoints = gameObject.GetComponentsInChildren<CollectibleSpawnPoint>(true);
+            if (spawnPoints.Length > 0)
+            {
+                collectible.transform.localPosition = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.localPosition;
+            }
+            else
+            {
+                collectible.transform.localPosition = Vector3.zero;
+            }
         }
         else {
             nextCollectibleIn--;
@@ -87,9 +96,18 @@ public class LevelGenerator : MonoBehaviour
         if (nextObstacleIn <= 0 && obstacleObjects.Count() > 0)
         {
             GameObject obstacle = Instantiate(obstacleObjects[rng.NextInt(obstacleObjects.Count())], tileObject.transform);
-            obstacle.transform.localPosition = Vector3.zero;
             tile.containedObjects.Add(obstacle);
             nextObstacleIn = rng.NextInt(minMaxObstacleFrequency.x, minMaxObstacleFrequency.y + 1);
+
+            ObstacleSpawnPoint[] spawnPoints = gameObject.GetComponentsInChildren<ObstacleSpawnPoint>(true);
+            if (spawnPoints.Length > 0)
+            {
+                obstacle.transform.localPosition = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.localPosition;
+            }
+            else
+            {
+                obstacle.transform.localPosition = Vector3.zero;
+            }
         }
         else
         {

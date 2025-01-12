@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float slowAmount = 0.5f;
+    [SerializeField] private GameObject deathParticles;
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.TryGetComponent(out Runner runner))
+        {
+            runner.Speed *= slowAmount;
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        if (deathParticles != null)
+        {
+            Instantiate(deathParticles, transform.position, transform.rotation);
+        }
+        Destroy(this);
     }
 }
