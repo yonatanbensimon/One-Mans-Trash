@@ -2157,30 +2157,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointsOverlay
       objectReference: {fileID: 0}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_text
-      value: 'Score: 0'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_fontSize
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 02ad0f3ff5ce3fe4cbccb83daacd8ef1, type: 2}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5820702276170872905, guid: 02ad0f3ff5ce3fe4cbccb83daacd8ef1, type: 2}
-    - target: {fileID: 7807449108014873135, guid: 611628108be3c5746af8802e89af5754, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
