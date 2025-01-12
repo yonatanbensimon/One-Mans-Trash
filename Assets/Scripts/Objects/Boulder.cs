@@ -6,7 +6,7 @@ public class Boulder : MonoBehaviour
     private Runner runner;
     private GameManager gameManager;
 
-    private float boulderSpeed;
+    public float boulderSpeed;
     private float runnerSpeed;
 
     [SerializeField] private float baseSpeed = 25;
