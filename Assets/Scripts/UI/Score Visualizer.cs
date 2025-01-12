@@ -4,6 +4,7 @@ using UnityEngine;
 public class ScoreVisualizer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI highScoreText;
 
     private void Start()
     {
@@ -32,6 +33,10 @@ public class ScoreVisualizer : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "Score: " + score;
+        }
+        if (highScoreText != null)
+        {
+            highScoreText.text = "High Score: " + GameManager.instance.HighScore;
         }
     }
 }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
         private set => _instance = value;
     }
 
+    public int HighScore { get; private set; }
+
     private int _points;
 
     private bool paragraphViewed = false;
@@ -91,6 +93,10 @@ public class GameManager : MonoBehaviour
         set
         {
             _points = value;
+            if (_points >= HighScore) 
+            { 
+                HighScore = _points;
+            }
             OnScoreUpdated?.Invoke(value);
         }
     }
