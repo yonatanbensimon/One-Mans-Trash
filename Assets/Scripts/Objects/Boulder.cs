@@ -33,11 +33,11 @@ public class Boulder : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     { 
-        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), runner.maxSpeed);
+        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), 0.9f * runner.maxSpeed);
         rb.MovePosition(transform.position + transform.forward * boulderSpeed * Time.fixedDeltaTime);
         if (Camera.main.TryGetComponent(out CameraShake cs))
         {
-            if (Vector3.Distance(transform.position, runner.transform.position) < shakeThreshold * boulderSpeed + 0.5 * shakeThreshold * shakeThreshold * acceleration)
+            if (Vector3.Distance(transform.position, runner.transform.position) < shakeThreshold * boulderSpeed + 0.5f * shakeThreshold * shakeThreshold * acceleration)
             {
                 cs.TriggerShake(float.PositiveInfinity, 0.2f);
             }
@@ -45,10 +45,6 @@ public class Boulder : MonoBehaviour
             {
                 cs.StopAllShake();
             }
-        }
-        else
-        {
-
         }
     }
 

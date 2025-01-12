@@ -29,13 +29,21 @@ public class LevelGenerator : MonoBehaviour
     GameObject[] collectibleObjects;
 
     [SerializeField]
+    GameObject[] cursedObjects;
+
+    [SerializeField]
     GameObject[] obstacleObjects;
 
     [SerializeField]
     int nextCollectibleIn = 1;
 
+    float oddsOfGoodItem = 1.0f;
+
     [SerializeField]
     int nextObstacleIn = 1;
+
+    [SerializeField]
+    float distanceBehindGeneration = 4.0f;
 
     private float tempCounter = 0;
 
@@ -55,7 +63,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (runner != null && Vector3.Distance(runner.transform.position, currentTilePos) < 2.0f * tileOffset.magnitude)
+        if (runner != null && Vector3.Distance(runner.transform.position, currentTilePos) < distanceBehindGeneration * tileOffset.magnitude)
         {
             RegenerateLastTile();
         }
@@ -76,7 +84,17 @@ public class LevelGenerator : MonoBehaviour
         tile.tileObject = tileObject;
 
         if (nextCollectibleIn <= 0 && collectibleObjects.Count() > 0) {
-            GameObject collectible = Instantiate(collectibleObjects[rng.NextInt(collectibleObjects.Count())], tileObject.transform);
+            GameObject collectible;
+            if (Random.value <= oddsOfGoodItem)
+            {
+                collectible = Instantiate(collectibleObjects[rng.NextInt(collectibleObjects.Count())], tileObject.transform);
+                oddsOfGoodItem -= 0.2f;
+            }
+            else
+            {
+                collectible = Instantiate(cursedObjects[rng.NextInt(cursedObjects.Count())], tileObject.transform);
+                oddsOfGoodItem += 0.2f;
+            }
             tile.containedObjects.Add(collectible);
             nextCollectibleIn = rng.NextInt(minMaxCollectibleFrequency.x, minMaxCollectibleFrequency.y + 1);
 

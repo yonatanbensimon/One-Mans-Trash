@@ -132,8 +132,20 @@ PrefabInstance:
       value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxObstacleFrequency.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxCollectibleFrequency.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: minMaxCollectibleFrequency.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: collectibleObjects.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: 'collectibleObjects.Array.data[0]'
@@ -151,6 +163,22 @@ PrefabInstance:
       propertyPath: 'collectibleObjects.Array.data[3]'
       value: 
       objectReference: {fileID: 8881692905683794767, guid: 3f2e3f600c9298941a5ff1b2d118c933, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: 8e699608090c0b34ebe25dd241c84149, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: 163e14246db8a4246a9e886438f3a034, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: 2cb2a325c4f2dc541b32563f764fdc02, type: 3}
+    - target: {fileID: 4612491946686497433, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
+      propertyPath: 'collectibleObjects.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8881692905683794767, guid: ba0a1fb0b78e2974c9fe6d182d61707b, type: 3}
     - target: {fileID: 7075637988121068994, guid: b8fe8111cf01f8940bc63177a823d384, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

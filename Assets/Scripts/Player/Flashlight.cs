@@ -40,6 +40,7 @@ public class Flashlight : MonoBehaviour
             Collectable collectable = hit.transform.GetComponent<Collectable>();
             if (collectable != null)
             {
+                collectable.OnCollection();
                 runner.CollectTreasureEvent();
                 int points = collectable.Points;
                 GameManager.instance.Points += points;
