@@ -6,7 +6,7 @@ public class Boulder : MonoBehaviour
     private Runner runner;
     private GameManager gameManager;
 
-    private float boulderSpeed;
+    public float boulderSpeed;
     private float runnerSpeed;
 
     [SerializeField] private float baseSpeed = 25;
@@ -17,19 +17,17 @@ public class Boulder : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        GameObject runnerObj = GameObject.FindWithTag("Player");
-        runner = runnerObj.GetComponent<Runner>();
+        runner = FindAnyObjectByType<Runner>();
         boulderSpeed = baseSpeed;
 
-        GameObject gameManagerObj = GameObject.FindWithTag("GameController");
-        gameManager = gameManagerObj.GetComponent<GameManager>();
+        gameManager = GameManager.instance;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     { 
-        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * (acceleration * Time.fixedDeltaTime)), runner.maxSpeed);
-        rb.MovePosition(transform.position + transform.forward * (baseSpeed * Time.fixedDeltaTime));
+        boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), runner.maxSpeed);
+        rb.MovePosition(transform.position + transform.forward * baseSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter(Collider collision)

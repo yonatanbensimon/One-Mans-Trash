@@ -43,6 +43,7 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.Points = 0;
         runner = FindAnyObjectByType<Runner>();
         rng.InitState();
         tiles = new LevelTile[tileCount];

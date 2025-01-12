@@ -51,7 +51,7 @@ public class Runner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Speed -= deceleration * Time.deltaTime;
+        Speed -= deceleration * Time.fixedDeltaTime;
         rb.MovePosition(transform.position + transform.forward * (speed * Time.fixedDeltaTime));
     }
 
