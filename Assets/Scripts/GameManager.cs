@@ -26,15 +26,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
-        {
-            Debug.LogWarning("There should only be one GameManager");
-            Destroy(this);
-        }
-        else
+        if (_instance == null)
         {
             _instance = this;
             DontDestroyOnLoad(_instance);
+        }
+        else if (_instance == this)
+        {
+        }
+        else
+        {
+            Debug.LogWarning("There should only be one GameManager");
+            Destroy(this);
         }
     }
     private void Start()
