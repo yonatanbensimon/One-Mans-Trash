@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.TryGetComponent(out Runner runner))
         {
+            runner.CancelAllSpeedUps();
             runner.Speed *= slowAmount;
             Die();
         }

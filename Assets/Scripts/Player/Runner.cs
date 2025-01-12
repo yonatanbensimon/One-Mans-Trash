@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class Runner : MonoBehaviour
 {
@@ -25,12 +27,17 @@ public class Runner : MonoBehaviour
     private Vector3 newPos;
     private bool isMoving = false;
 
+    public event Action<float> OnSpeedChanged;
+
+    private List<Coroutine> speedUpCoroutines;
+
     public float Speed
     {
         get => speed;
         set
         {
             speed = Math.Min(Math.Max(speedRange.x, value), speedRange.y);
+            OnSpeedChanged?.Invoke(speed);
         }
     }
 
@@ -51,6 +58,7 @@ public class Runner : MonoBehaviour
         pm = FindAnyObjectByType<PauseMenu>();
 
         UpdateLane();
+        speedUpCoroutines = new List<Coroutine>();
     }
 
     private void FixedUpdate()
@@ -112,5 +120,22 @@ public class Runner : MonoBehaviour
         {
             pm.Pause();
         }
+    }
+
+    public void AddSpeedUpCoroutine(Coroutine cr)
+    {
+        speedUpCoroutines.Add(cr);
+    }
+
+    public void CancelAllSpeedUps()
+    {
+        foreach (var cr in speedUpCoroutines)
+        {
+            if (cr != null)
+            {
+                StopCoroutine(cr);
+            }
+        }
+        speedUpCoroutines.Clear();
     }
 }

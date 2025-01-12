@@ -29,6 +29,9 @@ public class ScoreVisualizer : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreText.text = "Score: " + score;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
 }

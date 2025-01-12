@@ -1,4 +1,5 @@
 using NUnit.Framework.Constraints;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -41,9 +42,21 @@ public class Flashlight : MonoBehaviour
             {
                 int points = collectable.Points;
                 GameManager.instance.Points += points;
-                runner.Speed += points * pointSpeedRatio;
+                runner.AddSpeedUpCoroutine(StartCoroutine(increaseSpeed(points * pointSpeedRatio, 5f)));
                 hit.transform.gameObject.SetActive(false);
             }
         }
+    }
+
+    IEnumerator increaseSpeed(float speedIncrease, float timeFactor = 1.0f)
+    {
+        float targetSpeed = speedIncrease + runner.Speed;
+        int numFrames = Mathf.RoundToInt(speedIncrease / (timeFactor * Time.fixedDeltaTime));
+        for (int currentFrameCount = 0; currentFrameCount < numFrames; currentFrameCount++)
+        {
+            runner.Speed += timeFactor * Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        runner.Speed = targetSpeed;
     }
 }

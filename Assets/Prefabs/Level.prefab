@@ -47,7 +47,11 @@ MonoBehaviour:
   tileCount: 20
   tilePrefab: {fileID: 4796052506580694999, guid: a3d29313fd759ba428fa4e2c1507ebb2, type: 3}
   tileOffset: {x: 0, y: 0, z: 40}
-  minMaxCollectibleFrequency: {x: 3, y: 6}
+  minMaxCollectibleFrequency: {x: 2, y: 4}
+  minMaxObstacleFrequency: {x: 5, y: 10}
   collectibleObjects:
   - {fileID: 4000140398656196938, guid: 08ccf52ec160bf048bf0742276f8d1f9, type: 3}
+  obstacleObjects:
+  - {fileID: 5038348012190890437, guid: 27bf70eac2ff8f74a83817630b6cf791, type: 3}
   nextCollectibleIn: 1
+  nextObstacleIn: 1
