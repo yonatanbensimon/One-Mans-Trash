@@ -3,11 +3,18 @@ using UnityEngine;
 
 public class ScoreVisualizer : MonoBehaviour
 {
-    TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
     private void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>();
+        if (scoreText == null)
+        {
+            scoreText = GetComponent<TextMeshProUGUI>();
+        }
+        if (scoreText == null)
+        {
+            this.enabled = false;
+        }
     }
 
     private void OnEnable()
