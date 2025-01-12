@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private void Start()
+    private void Awake()
     {
         if (instance != null)
         {
@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        Points = 0;
+    }
+
     public void EndGame()
     {
         SceneManager.LoadScene("EndScene");
     }
 
+<<<<<<< Updated upstream
     public void Restart()
     {
         SceneManager.LoadScene("MainLevel");
@@ -34,5 +40,11 @@ public class GameManager : MonoBehaviour
     {
         //Once MainMenu is implemented
         print("Main Menu");
+=======
+    public int Points
+    {
+        get;
+        set;
+>>>>>>> Stashed changes
     }
 }

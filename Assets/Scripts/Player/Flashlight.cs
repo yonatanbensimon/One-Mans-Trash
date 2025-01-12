@@ -40,6 +40,7 @@ public class Flashlight : MonoBehaviour
             if (collectable != null)
             {
                 int points = collectable.Points;
+                GameManager.instance.Points += points;
                 runner.Speed += points * pointSpeedRatio;
                 hit.transform.gameObject.SetActive(false);
             }
