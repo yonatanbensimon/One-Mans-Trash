@@ -4,14 +4,12 @@ public class PauseMenu : MonoBehaviour
 {
     private GameManager gameManager;
     public static bool isGamePaused = false;
-    public static PauseMenu instance;
     public GameObject gameMenu;
 
     
     void Start()
     {
         gameManager = GameManager.instance;
-        instance = this;
     }
 
     public bool Paused
@@ -33,8 +31,8 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = true;
     }
 
-    void MainMenu()
+    public void MainMenu()
     {
-
+        gameManager.MainMenu();
     }
 }
