@@ -931,7 +931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: CLAIMED BY THE TEMPLE...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
   m_sharedMaterial: {fileID: 1482817029282300463, guid: f5fe666fc748a4e98a55374daab3bbd7, type: 2}
@@ -940,8 +940,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286660594
-  m_fontColor: {r: 0.95, g: 0.247, b: 0.50476676, a: 1}
+    rgba: 4281341689
+  m_fontColor: {r: 0.97735846, g: 0.08667136, b: 0.18942423, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
