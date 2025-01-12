@@ -48,7 +48,7 @@ public class Runner : MonoBehaviour
         currentLane = 1; //Lanes are 0-indexed
         lineWidth = sizeOfPlane / numOfLanes;
 
-        pm = PauseMenu.instance;
+        pm = FindAnyObjectByType<PauseMenu>();
 
         UpdateLane();
     }

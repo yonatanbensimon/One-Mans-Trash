@@ -27,7 +27,7 @@ public class Boulder : MonoBehaviour
     void FixedUpdate()
     { 
         boulderSpeed = Mathf.Min((boulderSpeed + difficultyLevel * acceleration * Time.fixedDeltaTime), runner.maxSpeed);
-        rb.MovePosition(transform.position + transform.forward * baseSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + transform.forward * boulderSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter(Collider collision)

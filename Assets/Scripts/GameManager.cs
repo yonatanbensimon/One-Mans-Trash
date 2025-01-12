@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
-        //Once MainMenu is implemented
-        print("Main Menu");
+        Points = 0;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public int Points
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _points = value;
-            OnScoreUpdated.Invoke(value);
+            OnScoreUpdated?.Invoke(value);
         }
     }
 
