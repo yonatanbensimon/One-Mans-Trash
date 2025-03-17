@@ -83,8 +83,24 @@ public class Runner : MonoBehaviour
         speedSlider.ChangePlayerOffset(playerPos);
     }
 
+    // Adding this old input code because Unity's new Input System isn't detecting inputs for some users.
+    // NOTE: The game is also implementing the New Input System too. (Both systems are running simultaneously.)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            OnMoveLeft();
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            OnMoveRight();
+        }
+    }
+
     void OnMoveLeft()
     {
+        Debug.Log("Move Left triggered");
         if (currentLane != 0 && !isMoving)
         {
             currentLane--;
@@ -95,6 +111,7 @@ public class Runner : MonoBehaviour
 
     void OnMoveRight()
     {
+        Debug.Log("Move Right triggered");
         if (currentLane != (numOfLanes - 1) && !isMoving)
         {
             currentLane++;
